@@ -1,0 +1,68 @@
+[
+    {
+    "song": "Final Lullaby",
+    "artist": ["The Weeknd"],
+    "genre": "R&B/Soul",
+    "year": "2020",
+    }, 
+    {
+    "song": "Purple Emoji",
+    "artist": ["Ty Dolla $ign", "J. Cole"],
+    "genre": "R&B/Soul",
+    "year": "2019",
+    }, 
+    {
+    "song": "West Coast Love",
+    "artist": ["Emotional Oranges"],
+    "genre": "R&B/Soul",
+    "year": "2019",
+    },
+    {
+    "song": "Love Me Again",
+    "artist": ["John Newman"],
+    "genre": "Pop",
+    "year": "2013",
+    },
+    {
+    "song": "Playing to Lose",
+    "artist": ["Lemaitre", "Stanaj"],
+    "genre": "Dance/Electronic",
+    "year": "2017",
+    },
+    {
+    "song": "Good Days",
+    "artist": ["SZA"],
+    "genre": "R&B/Soul",
+    "year": "2020",
+    },
+    {
+    "song": "Damage",
+    "artist": ["Lemaitre", "Stanaj"],
+    "genre": "Dance/Electronic",
+    "year": "2017",
+    },
+    {
+    "song": "Borderline",
+    "artist": ["Tove Styrke"],
+    "genre": "Alternative/Indie",
+    "year": "2015",
+    },
+    {
+    "song": "Redemption",
+    "artist": ["Zacari", "Babes Wodumo"],
+    "genre": "Hip-Hop/Rap",
+    "year": "2018",
+    },
+    {
+    "song": "Thinking 'Bout You",
+    "artist": ["Dua Lipa"],
+    "genre": "Pop",
+    "year": "2017",
+    },
+    {
+    "song": "Mystery Lady",
+    "artist": ["Masego", "Don Toliver"],
+    "genre": "R&B",
+    "year": "2020",
+    }
+]
