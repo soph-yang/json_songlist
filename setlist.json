@@ -2,19 +2,19 @@
     {
     "song": "Final Lullaby",
     "artist": ["The Weeknd"],
-    "genre": "R&B/Soul",
+    "genre": "RB/Soul",
     "year": "2020",
     },
     {
     "song": "Purple Emoji",
-    "artist": ["Ty Dolla $ign", "J. Cole"],
-    "genre": "R&B/Soul",
+    "artist": ["Ty Dolla ign", "J. Cole"],
+    "genre": "RB/Soul",
     "year": "2019",
     },
     {
     "song": "West Coast Love",
     "artist": ["Emotional Oranges"],
-    "genre": "R&B/Soul",
+    "genre": "RB/Soul",
     "year": "2019",
     },
     {
@@ -32,7 +32,7 @@
     {
     "song": "Good Days",
     "artist": ["SZA"],
-    "genre": "R&B/Soul",
+    "genre": "RB/Soul",
     "year": "2020",
     },
     {
@@ -62,7 +62,7 @@
     {
     "song": "Mystery Lady",
     "artist": ["Masego", "Don Toliver"],
-    "genre": "R&B",
+    "genre": "RB",
     "year": "2020",
     }
 ]
