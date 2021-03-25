@@ -3,53 +3,40 @@
     <head>
         <meta charset="utf-8">
         <title>JSON Set List</title>
-    	<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
-    	<!-- <script language="javascript" src="https://raw.githubusercontent.com/soph-yang/json_songlist/main/setlist.json"></script> -->
+    	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
         <script>
             function loadData() {
+                // Step 1: Make instance of request object to make HTTP request after page is loaded
                 var request = new XMLHttpRequest();
-	            console.log("1: created request");
                 
+                // Step 2: Set the URL for the AJAX request to be the JSON file
                 request.open("GET", "https://raw.githubusercontent.com/soph-yang/json_songlist/main/setlist.json", true);
 
-                
+			    // Step 3: set up event handler/callback
                 request.onreadystatechange = function() {
                     if ((request.readyState == 4) && (request.status == 200)) {
-                            console.log("5:  data is ready");
-                            data = request.responseText;
-                            songs = JSON.parse(data);
-                            
-                            strHTML = "<ul>";
-        					songs.forEach(function(song) { 
-        					  strHTML += "<li>" + song.song + " : " + song.artist + "</li>";
-        					}) 
-        					strHTML += "</ul>";
-                            document.write(strHTML);
+                        // Step 5: wait for done + success
+                        data = request.responseText;
+                        songjson = JSON.parse(data);
+                        
+                        //Display html on page 
+                        strHTML = "<ul style='list-style-type:none'>";
+    					songjson.forEach(function(song) { 
+                            strHTML += "<li>" + song.song + "</li>";
+                            strHTML += "<li>Artist: " + song.artist + "</li>";
+                            strHTML += "<li>Genre: " + song.genre + "</li>";
+                            strHTML += "<li>Released " + song.year + "</li><br/>";
+    					}) 
+    					strHTML += "</ul>";
+                        document.write(strHTML);
                     }
-                    console.log("3:  event fired");
                 };
+               
+                // Step 4: fire off the HTTP request
                 request.send();
             }
         </script>
     </head>
     <body onload="loadData()">
-        <script type="text/javascript">              
-            // $.get("https://github.com/soph-yang/json_songlist/blob/main/setlist.json", 
-            //     function(data) {
-            //         let string = JSON.stringify(data);
-            //         parse = JSON.parse(string);
-            //         document.write(parse + "<br />");
-            // 
-            //         s = "<ul style='list-style-type:none;'>";
-            //         parse.forEach(function(song) {
-            //             s += "<li>";
-            //             s += song;
-            //             s += "</li>";
-            //         });
-            //         s += "</ul>";
-            //         document.write(s);
-            //     }
-            // )
-        </script>
     </body>
 </html>
