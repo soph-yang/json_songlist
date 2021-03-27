@@ -20,23 +20,54 @@
                         songjson = JSON.parse(data);
                         
                         //Display html on page 
-                        strHTML = "<ul style='list-style-type:none'>";
-    					songjson.forEach(function(song) { 
-                            strHTML += "<li>" + song.name + "</li>";
-                            strHTML += "<li>Artist: " + song.artist + "</li>";
-                            strHTML += "<li>Genre: " + song.genre + "</li>";
-                            strHTML += "<li>Released " + song.year + "</li><br/>";
-    					}) 
-    					strHTML += "</ul>";
-                        document.write(strHTML);
+                        document.getElementById("stringdata").innerHTML = data;
+                        prettyPrint(songjson);
+                        
+                        //Display select html
+                        let genre_array = songjson.map(song => song.genre);
+                        let unique = [...new Set(genre_array)];
+                        s = "<option>Select an option</option>";
+                        unique.forEach(element => s += "<option>" + element + "</option>");
+                        document.getElementById("filtergenre").innerHTML = s;
                     }
                 };
                
                 // Step 4: fire off the HTTP request
                 request.send();
             }
+            
+            function prettyPrint(json_object) {
+                strHTML = "<ul style='list-style-type:none'>";
+                json_object.forEach(function(song) { 
+                    strHTML += "<li>" + song.name + "</li>";
+                    strHTML += "<li>Artist: " + song.artist + "</li>";
+                    strHTML += "<li>Genre: " + song.genre + "</li>";
+                    strHTML += "<li>Released " + song.year + "</li><br/>";
+                }) 
+                strHTML += "</ul>";
+                document.getElementById("prettydata").innerHTML = strHTML;
+            }
+            
+            function filter() {
+                let selected_genre = $('select').find(':selected').text();
+                                 
+                filtered_songjson = songjson.filter(function(song) {
+                    return song.genre == selected_genre;
+                })
+                
+                prettyPrint(filtered_songjson);
+            }
         </script>
     </head>
     <body onload="loadData()">
+        <div id="stringdata"></div>
+        <form style="margin-bottom: 100px">
+            <select id="filtergenre">
+                <option>Select genre</option>
+                <option>dsf</option>
+            </select>
+            <input type="button" value="Filter" onclick="filter()">
+        </form>
+        <div id="prettydata">Loading...</div>
     </body>
 </html>
