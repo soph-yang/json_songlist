@@ -59,13 +59,10 @@
             }
         </script>
     </head>
-    <body onload="loadData()">
-        <div id="stringdata"></div>
-        <form style="margin-bottom: 100px">
-            <select id="filtergenre">
-                <option>Select genre</option>
-                <option>dsf</option>
-            </select>
+    <body onload="loadData()" style="text-align: center">
+        <div id="stringdata" ></div>
+        <form>
+            <select id="filtergenre" style="margin-bottom: 50px; margin-top: 50px"></select>
             <input type="button" value="Filter" onclick="filter()">
         </form>
         <div id="prettydata">Loading...</div>
